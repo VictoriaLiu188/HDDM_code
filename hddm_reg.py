@@ -18,7 +18,7 @@ import hddm
 
 
 
-df_orig = pd.read_csv('/data2/victoria/brain_data/brain_behav_late_learn.csv')
+df_orig = pd.read_csv('/data2/victoria/brain_data/early_learn_brain_behav.csv')
 # df = df_orig.loc[:,['sbj','correct','rt','trial','run','type','learner','roi1']]
 # df.columns = ('subj_idx','response','rt','trial','run','type','learner','roi1')
 df = df_orig
