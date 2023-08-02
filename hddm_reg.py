@@ -30,11 +30,11 @@ df = df.dropna()
 # df['run_trial'] = df['run_trial'].astype('category')
 # create learn_bin col
 #
-df.loc[:,'learnbin'] = np.floor((df.run-1)/2)
+# df.loc[:,'learnbin'] = np.floor((df.run-1)/2)
 
 
 for i in range(1,109):
-    m_reg = hddm.HDDMRegressor(df, f"v ~ learnbin * roi{i} * C(type,Treatment('prototype'))",
+    m_reg = hddm.HDDMRegressor(df, f"v ~ run * roi{i} * C(type,Treatment('prototype'))",
                                 p_outlier=0.05)  
     m_reg.find_starting_values()
     m_reg.sample(2000, burn=1000)

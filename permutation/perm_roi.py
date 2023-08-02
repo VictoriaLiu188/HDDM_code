@@ -30,8 +30,8 @@ df = df.dropna()
 roi_df = df.iloc[:,-108:]
 behave_df =df.iloc[:,1:17]
 
-roi_ls = [41]
-for i in range(0,350):
+roi_ls = [14,15]
+for i in range(400):
     num_row = 0
     behav_shu = pd.DataFrame()
     for p in range(100,143):
@@ -54,8 +54,8 @@ for i in range(0,350):
     roi_df = roi_df.reset_index(drop=True)
     df_shu = pd.concat([behav_shu,roi_df], axis=1)
     for roi in roi_ls:
-        m_reg = hddm.HDDMRegressor(df_shu,f"v ~ roi{roi} * C(type,Treatment('prototype'))",
+        m_reg = hddm.HDDMRegressor(df_shu,f"a ~ roi{roi} * C(type,Treatment('prototype'))",
                                 p_outlier=0.05)  
         m_reg.sample(2000, burn=1000)
-        print("DIC value: {}\n".format(m_reg.dic))
+        print(f" roi{roi}_DIC value: {m_reg.dic}")
         
