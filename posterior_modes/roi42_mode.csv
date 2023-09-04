@@ -1,0 +1,19 @@
+,node_name,mode
+0,v_Intercept,0.049071115768848636
+1,"v_C(type, Treatment('prototype'))[T.exception]",0.08714031170296907
+2,"v_C(type, Treatment('prototype'))[T.rule follower]",-0.04712162461803496
+3,v_roi42,0.17803649075462646
+4,"v_roi42:C(type, Treatment('prototype'))[T.exception]",0.2053541766740694
+5,"v_roi42:C(type, Treatment('prototype'))[T.rule follower]",0.19941275250655544
+6,a_Intercept,1.7417550366432542
+7,"a_C(type, Treatment('prototype'))[T.exception]",0.08056922374175965
+8,"a_C(type, Treatment('prototype'))[T.rule follower]",0.043083505159522334
+9,a_roi42,-0.8664886240925319
+10,"a_roi42:C(type, Treatment('prototype'))[T.exception]",0.07935232172597884
+11,"a_roi42:C(type, Treatment('prototype'))[T.rule follower]",-0.1010270188274649
+12,t_Intercept,0.35483614699489524
+13,"t_C(type, Treatment('prototype'))[T.exception]",0.016176301044864803
+14,"t_C(type, Treatment('prototype'))[T.rule follower]",0.02949934436341605
+15,t_roi42,0.004723897306556535
+16,"t_roi42:C(type, Treatment('prototype'))[T.exception]",-0.04730736487661796
+17,"t_roi42:C(type, Treatment('prototype'))[T.rule follower]",0.030129311301386352
