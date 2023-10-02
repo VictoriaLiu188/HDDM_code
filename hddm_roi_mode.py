@@ -27,9 +27,9 @@ df = df.dropna()
 early_learn = df[df['run'].isin([1, 2])].copy()
 
 
-roi_ls = [39,40,41,42,43,44,48,51,52,53,60,61,65,67,68,70,74,77,78,79,80,81,82,83,88,90,91,92,93,94,99,105,106]
+roi_ls = [38,39,40,41,42,43,44,48,90,91,92,93,94] # only DMN regions this time
 
-for i in range(108):
+for i in range(len(roi_ls)):
     roi =  roi_ls[i]
     m_reg = hddm.HDDMRegressor(early_learn, [f"v ~ roi{roi} * C(type,Treatment('prototype'))", \
                                         f"a ~ roi{roi} * C(type,Treatment('prototype'))",\
@@ -48,9 +48,11 @@ for i in range(108):
     
     # Loop through each node and calculate the peak value
     for i in range(len(nodes_array)):
+        x = np.arange(-0.9, 1.4, 0.0023)
         node = str(nodes_array[i])
         node_trace = m_reg.nodes_db.node[node].trace()  # Access the trace of the specific node
         # Estimate bandwidth using Scott's rule of thumb
+        
         bandwidth = 1.06 * np.std(node_trace) * len(node_trace)**(-0.2)
 
         # Fit KDE to the data
