@@ -63,14 +63,14 @@ for i in range(len(roi_ls)):
     medians_rf = np.median(a_RuleFollower, axis=0)
     medians_e = np.median(a_Exception, axis=0)
     
-    a_trace_dict = {'a_proto': a_Prototype, 'a_rf': a_RuleFollower, 'a_excep': a_Exception}
+    a_median_dict = {'a_proto': medians_p, 'a_rf': medians_rf, 'a_excep': medians_e}
     # Stack the matrices vertically
-    stacked_matrix = np.vstack([matrix for matrix in a_trace_dict.values()])
+    stacked_matrix = np.vstack([matrix for matrix in a_median_dict.values()])
 
     # Create a DataFrame from the stacked matrix
     df = pd.DataFrame(stacked_matrix)
     # Save the DataFrame to a CSV file
-    df.to_csv(f'a_ROI{roi}_trace.csv', index=False, header=False)  # Set header=False to omit column headers
+    df.to_csv(f'a_ROI{roi}_medians.csv', index=False, header=False)  # Set header=False to omit column headers
     ################### calculate drift rate actual values ###########################
     v_Intercept = m_reg.nodes_db.node["v_Intercept"]
     v_roi = m_reg.nodes_db.node[f"v_roi{roi}"]
@@ -92,14 +92,14 @@ for i in range(len(roi_ls)):
     medians_rf = np.median(v_RuleFollower, axis=0)
     medians_e = np.median(v_Exception, axis=0)
     
-    v_trace_dict = {'v_proto': v_Prototype, 'v_rf': v_RuleFollower, 'v_excep': v_Exception}
+    v_medians_dict = {'v_proto': medians_p, 'v_rf': medians_rf, 'v_excep': medians_e}
     # Stack the matrices vertically
-    stacked_matrix = np.vstack([matrix for matrix in v_trace_dict.values()])
+    stacked_matrix = np.vstack([matrix for matrix in v_medians_dict.values()])
 
     # Create a DataFrame from the stacked matrix
     df = pd.DataFrame(stacked_matrix)
     # Save the DataFrame to a CSV file
-    df.to_csv(f'v_ROI{roi}_trace.csv', index=False, header=False)  # Set header=False to omit column headers
+    df.to_csv(f'v_ROI{roi}_medians.csv', index=False, header=False)  # Set header=False to omit column headers
 ################### calculate decision time actual values ###########################
     t_Intercept = m_reg.nodes_db.node["t_Intercept"]
     t_roi = m_reg.nodes_db.node[f"t_roi{roi}"]
@@ -123,11 +123,11 @@ for i in range(len(roi_ls)):
     medians_e = np.median(t_Exception, axis=0)
     
     
-    t_trace_dict = {'t_proto': t_Prototype, 't_rf': t_RuleFollower, 't_excep': t_Exception}
+    t_medians_dict = {'t_proto': medians_p, 't_rf': medians_rf, 't_excep': medians_e}
     # Stack the matrices vertically
-    stacked_matrix = np.vstack([matrix for matrix in t_trace_dict.values()])
+    stacked_matrix = np.vstack([matrix for matrix in t_medians_dict.values()])
 
     # Create a DataFrame from the stacked matrix
     df = pd.DataFrame(stacked_matrix)
     # Save the DataFrame to a CSV file
-    df.to_csv(f't_ROI{roi}_trace.csv', index=False, header=False)  # Set header=False to omit column headers
+    df.to_csv(f't_ROI{roi}_medians.csv', index=False, header=False)  # Set header=False to omit column headers
