@@ -1,0 +1,23 @@
+
+Call:
+lm(formula = threshold ~ beta * stimuli, data = long_df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.84724 -0.05652 -0.00186  0.05429  0.94736 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                1.7705656  0.0008495 2084.17   <2e-16 ***
+beta                      -1.1893607  0.0023306 -510.33   <2e-16 ***
+stimuliprototype          -0.0567499  0.0012014  -47.24   <2e-16 ***
+stimulirulefollowers      -0.0441135  0.0012014  -36.72   <2e-16 ***
+beta:stimuliprototype      0.1863549  0.0032959   56.54   <2e-16 ***
+beta:stimulirulefollowers -0.2365061  0.0032959  -71.76   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1193 on 59994 degrees of freedom
+Multiple R-squared:  0.9321,	Adjusted R-squared:  0.932 
+F-statistic: 1.646e+05 on 5 and 59994 DF,  p-value: < 2.2e-16
+

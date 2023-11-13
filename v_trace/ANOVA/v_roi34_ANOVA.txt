@@ -1,0 +1,5 @@
+              Df Sum Sq Mean Sq F value   Pr(>F)    
+Group          2   26.8  13.392   23.73 5.96e-11 ***
+Residuals   2997 1691.4   0.564                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

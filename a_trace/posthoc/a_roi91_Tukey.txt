@@ -1,0 +1,11 @@
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Value ~ Group, data = df_stacked)
+
+$Group
+                           diff        lwr        upr p adj
+proto_rf-proto_excep  0.2433934  0.1867617  0.3000251     0
+rf_excep-proto_excep -0.7200945 -0.7767262 -0.6634628     0
+rf_excep-proto_rf    -0.9634879 -1.0201196 -0.9068562     0
+
